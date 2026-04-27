@@ -1,0 +1,26 @@
+table{
+    border: 2px solid red;
+    border-collapse: collapse;
+    width: 40%;
+
+
+}
+
+    thead{
+        background-color: red;
+        
+    }
+
+
+
+td{
+    border: 2px solid black;
+    text-align: left;
+    background-color: aqua;
+}
+
+#main{
+    width: 50%;
+    height: 100%;
+    background-color: black;
+}

@@ -1,0 +1,25 @@
+#box{
+    display: flex; /* This is used to display the box in horizontal format*/
+    justify-content: center;
+    /* justify-content: center; */
+    /* Start and End with jusify-content */
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    background-color: grey;
+}
+#box1{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(234, 76, 76);
+}
+#box2{
+    width: 90px;
+    height: 80px;
+    background-color: rgb(249, 231, 131);
+}
+#box3{
+    width: 80px;
+    height: 60px;
+    background-color: rgb(83, 111, 235);
+}
