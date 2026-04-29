@@ -5,7 +5,8 @@
 
 /* 
 number => 2 to power 52
-bigint use for big number ( used in stock market )
+string
+BigInt use for big number ( used in stock market )
 boolean- true or false
 null=> standalone value
 undefined 
