@@ -1,7 +1,12 @@
-const mySymbol = Symbol('1,2,3')
-console.log(typeof mySymbol)
+let accountDetails1 = {
+    username: "helloworld2",
+    age: 24,
+    rollno: 3546
+}
+    
+let accountDetails2 = accountDetails1
 
-const yourSymbol = Symbol('1,2,3')
-console.log(typeof yourSymbol)
+accountDetails1.age = 46
 
-console.log(mySymbol == yourSymbol)
+console.log(accountDetails1.age)
+console.log(accountDetails2.age)

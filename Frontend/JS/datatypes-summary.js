@@ -59,4 +59,37 @@ console.log(typeof myfunction)
 
 
 
+//  *********************************************************
+
+// Primitive(Stack) and Non-Primitive(Heap)
+
+// Example of Primitive Datatypes **** gives copy of the element 
+
+let myyoutubeChannel = "harrybeta21dotcom"
+let youtubeChannel = myyoutubeChannel
+youtubeChannel = "java@gmail.com"
+// myyoutubeChannel = "java@gmail.com"
+
+console.log(youtubeChannel)
+
+console.log(myyoutubeChannel)
+
+
+// Non-Primitive Datatype **** stores in heap memory which refer to the same element
+let accountDetails1 = {
+    username: "helloworld2",
+    age: 24,
+    rollno: 3546
+}
+    
+let accountDetails2 = accountDetails1
+
+accountDetails1.age = 46
+
+console.log(accountDetails1.age)
+console.log(accountDetails2.age)
+
+
+
+
 
