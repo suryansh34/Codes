@@ -1,11 +1,12 @@
+console.log(Math.random())
+console.log((Math.random()*10)+1)
+console.log(Math.floor(Math.random()*10)+1)
 
-const name = "  s  u  r  y  a   "
-console.log(name)
-console.log(name.trim())
+// concept of min and max
 
-// Replace is the string methods
-const url = "https://google.com/suryansh%20sahu"
+const min = 10
+const max = 20
 
-console.log(url.replace('%20','-'))
-
-console.log(url.includes('sahuji'))
+// to get the minimum value add min and for maximum value we should add max value 
+console.log(Math.floor(Math.random() * (max - min + 1)) + min)
+console.log(Math.floor(Math.random() * (max - min + 1)) + max)
