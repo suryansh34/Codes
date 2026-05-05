@@ -1,5 +1,2 @@
-let myDOB = new Date("2006-06-15")
-let myTimestamp = Date.now()
-console.log(myTimestamp)
-console.log(myDOB.getDate())
-console.log(myDOB.getTime())
+
+console.log("what is your name")

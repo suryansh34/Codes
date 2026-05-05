@@ -27,4 +27,7 @@ console.log(myTimestamp)
 
 console.log(myDOB.getTime())
 console.log(myDOB.getTime())
+console.log|("What is the name 0f your city")
+
+console.log("what is your name")
 
