@@ -4,6 +4,8 @@
 const mySym = Symbol("key1")
 // how to use symbol as a key of an object
 
+console.log(mySym)
+
 const JsUser = {
     name: "Suryansh",
     "full_name": "Suryansh Sahu",

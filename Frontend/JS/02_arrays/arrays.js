@@ -10,7 +10,7 @@ console.log(superheros[1])
 
 
 const MyArr2 = new Array(1,2,3,4)
-console.log(MyArr2[1])
+console.log(MyArr2[1]) // Indexing start from 0 here.
 
 
 // Deep Copy and Shallow Copy

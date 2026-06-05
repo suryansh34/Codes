@@ -1,36 +1,11 @@
-const users = [
+const course = {
+    coursename: "javascript",
+    price:"999",
+    courseInstructor: "john"
+}
 
-    
-    {
-        id: 1,
-        email: "some@gmail.com"
-        
-    },
-    {
-        id: 2,
-        email: "some@gmail.com"
-        
-    },
-    {
-        id: 3,
-        email: "some@gmail.com"
-        
-    },
-    {
-        id: 4,
-        email: "some@gmail.com"
-        
-    }
-
-]
-
-users[1].email
-console.log("this is after facebookk USer")
-console.log(facebookUser);
-console.log(Object.keys(facebookUser));
-console.log(Object.values(facebookUser));
-console.log(Object.entries(facebookUser));
+//course.courseInstructor
 
 
-// to verify if the property exist we use hasOwnProperty
-console.log(facebookUser.hasOwnProperty('name'))
+const {courseInstructor: instructor, price: p /* this is used to give it a short name*/} = course
+console.log(instructor,p)
