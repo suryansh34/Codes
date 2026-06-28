@@ -1,0 +1,24 @@
+body{
+    background: rgb(231, 227, 227);
+}
+
+.heading{
+    color: rgb(255, 122, 122);
+    background-color: rgb(205, 241, 241);
+    background-size: fixed;
+    display: inline;
+}
+.parallax-image img{
+    width: 100%;height: 100%;
+    object-fit: cover;
+    transform-style: preserve-3d;
+    cursor: pointer; border-radius: 8px;
+    border: 5px ridge black;
+    transition: transform 0.5s ease;
+    
+    
+}
+.parallax-image:hover img{
+    transform: rotateX(5deg) rotateY(5deg) scale(1.05);
+    box-shadow: 20px 20px 40px rgba(0,0,0,0.3);
+}

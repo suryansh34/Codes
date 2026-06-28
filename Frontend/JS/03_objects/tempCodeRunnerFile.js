@@ -1,11 +1,12 @@
-const course = {
-    coursename: "javascript",
-    price:"999",
-    courseInstructor: "john"
+let c = 300
+
+
+if(true){
+    let a = 10
+    const b = 20
+    let c = 30
+    console.log("This is local scope")
+    console.log("INNER: ",c)
 }
-
-//course.courseInstructor
-
-
-const {courseInstructor: instructor, price: p /* this is used to give it a short name*/} = course
-console.log(instructor,p)
+console.log("This is global scope")
+console.log(c);
