@@ -1,15 +1,4 @@
-function loginUserMessage(username = "Suryansh") { // given default username as suryansh.
-    if(username == undefined){ // or we can write if(!username){ code.... }
-        console.log("Please Loggedin with username.");
+(function chai(){
+    console.log("Hemlo Ji");
 
-        
-    }
-    else{
-
-        return `${username} just loggedin`
-    }
-}
-
-
-// console.log(loginUserMessage("Suryansh"))
-console.log(loginUserMessage("Aashu"))
+})()

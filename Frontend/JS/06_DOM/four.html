@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Aur Code</title>
+</head>
+<body style="background-color: #212121; color: #ffff">
+    <ul class="langauge">
+        <li>Javascript </li>
+    </ul>
+</body>
+<script>
+    function addLangauge(langName) {
+        const li = document.createElement('li');
+
+        li.innerHTML = `${langName}`
+
+        document.querySelector('.langauge').appendChild(li);
+    }
+    addLangauge("Python")
+    addLangauge("C Programming Langauge");
+    addLangauge("Javascript");
+    addLangauge("Python3")
+
+    // this will remove the last langauge 
+    // function removeLangauge() {
+
+    //     const li = document.querySelector('.langauge li:last-child');
+
+    //     li.remove();
+    // }
+    // removeLangauge()
+
+
+    // to remove specific langauge.
+
+
+    function removeLangauge(langName) {
+        const items = document.querySelectorAll('.langauge li');
+
+        items.forEach((li) => {
+            if(li.innerText === langName){
+                li.remove();
+            }
+        });
+    }
+
+    // removeLangauge("Python")
+
+
+    // Edit
+    const secondLang = document.querySelector('li:nth-child(2)')
+    console.log(secondLang)
+    secondLang.innerHTML = 'Mojo'
+
+    const newli = document.createElement('li')
+    newli.textContent = 'Gojo'
+    secondLang.replaceWith(newli)
+    
+
+    const thirdLang = document.querySelector('li:nth-child(3)')
+    thirdLang.innerHTML = 'Jojo'
+
+
+    // edit
+
+    const firstLang = document.querySelector('li:first-child')
+    // firstLang.innerHTML = 'Coco'
+    firstLang.outerHTML = '<li>Koko</li>'
+
+
+    // remove
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove() //Python3 is removed
+
+
+</script>   
+</html>

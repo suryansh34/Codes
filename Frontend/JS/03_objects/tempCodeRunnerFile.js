@@ -1,12 +1,6 @@
-let c = 300
+// hoisting --> Hoisting in JavaScript means that declarations are conceptually moved to the top of their scope before code execution.
+console.log(addTwo(2))
 
-
-if(true){
-    let a = 10
-    const b = 20
-    let c = 30
-    console.log("This is local scope")
-    console.log("INNER: ",c)
+const addTwo  = function(num){
+    return num + 2
 }
-console.log("This is global scope")
-console.log(c);

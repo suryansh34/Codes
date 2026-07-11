@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>DOM Learning</title>
+</head>
+<body class="bg-black">
+    <style>
+        .bg-black{
+            color: #ffffff;
+            background: #0b0b0b;
+        }
+    </style>
+    <div>
+        <h1 id="title" class="heading">DOM Learning with ChaiaurCode. <span style="display: none;" >test text </span></h1>
+        <input type="password" name="Suryansh" id="in">       
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+
+    <ul>
+        <li class="list_item">one</li>
+        <li class="list_item">two</li>
+        <li class="list_item">three</li> 
+    </ul>
+    
+</body>
+
+</html>
+
+
+<!-- difference between textContent and innerText 
+
+
+title.innerText
+'DOM Learning with ChaiaurCode.'
+title.textContent
+'DOM Learning with ChaiaurCode. test text '
+
+<! to set black theme on site use this command-->
+
+document.querySelectorAll('*').forEach(function (el) => {
+    el.style.backgroundColor = "black"
+    el.style.color = "white"
+    
+})
+
+
+
+
+-->
