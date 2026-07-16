@@ -26,7 +26,11 @@ let temp2; // undefined
 console.table([temp, temp2]);
 
 console.log("type of accountID is: ",typeof null); // type of null is object , 
-console.log("type of accountID is: ",typeof undefined); // undefined is undefined bcoz it is a type in JS.
+console.log("type of accountID is: ",typeof undefined); // undefined is undefined bcoz it is a type in JS.  
+
+
+console.log("type of accountID is: ",typeof temp); // object , 
+console.log("type of accountID is: ",typeof temp2); // undefined 
 
 
 // this is function i made 
@@ -35,16 +39,29 @@ function Items(dry,wet){
     this.wet = wet;
 
 }
+
 // an object i will make 
 
 // create a object and takes value --> eassier than below steps 
 
 const me = new Items("Kaju","Chasni");
 
+// console.log(me)
+
 // this is simpler to create a object and insert values 
+
 const me = {}  //this is empty object 
 me.dry = "Kaju"
 me.wet = "Katli"
 
 console.table(me)
+
+
+
+// !!!!!!!!!!! This is not the correct method !!!!!!!!!!!!!
+const e = emptyObj = {}
+e.dry = "kaju"
+e.wet = "katli"
+
+console.table(e)
 
