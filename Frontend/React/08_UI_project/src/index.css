@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* div without scrollbar */
+#right:-webkit-scrollbar{
+  display: none;
+}

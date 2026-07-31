@@ -1,0 +1,20 @@
+.header{
+    background-color: rgb(2, 122, 100);
+    color: rgb(83, 47, 89);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px;
+    padding: 10px 20px;
+
+}
+
+.btn{
+    background-color: rgb(243, 224, 17);
+    
+}
+.logo{
+    background-color: blueviolet;
+    color: white;
+    text-decoration:underline;
+}

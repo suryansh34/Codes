@@ -27,7 +27,7 @@ console.log(JsUser[mySym]) // this is wrong --> // this is string not symbol , t
 // Point of interview we use Symbol like  --> IMP Note
 
 // to changed the value we use ---
-                                ||
+                            
 
 
 JsUser.email == "surya@chatgpt.com"

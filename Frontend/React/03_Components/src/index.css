@@ -1,0 +1,11 @@
+body{
+ background-color: #111;
+ color:#fff;
+ font-family: cursive; 
+}
+
+.card{
+  background-color: greenyellow;
+  border-radius: 10px;
+  margin: 20px;
+}
