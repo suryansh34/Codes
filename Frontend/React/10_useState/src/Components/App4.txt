@@ -1,0 +1,19 @@
+// destructuring for array
+import React, { useState } from 'react'
+
+const App3 = () => {
+    
+    const [num,setNum] = useState({user:'Rishi,age: 17})
+
+    const btnClicked = ()=> {
+        setNum(prev=>({...prev,age:50}))
+    }
+  return (
+    <div>
+      <h1>{num}</h1>
+      <button onClick={btnClicked}>Click Here</button>
+    </div>
+  )
+}
+
+export default App3

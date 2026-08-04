@@ -1,0 +1,19 @@
+*{
+  margin: 0;
+  padding: 0;
+  background-color: #111; 
+  color: #fff; 
+}
+button{
+  padding: 10px 20px;
+  margin: 20px;
+  background-color: #aaa;
+}
+.h1{  
+  padding: 10px 70px;
+  margin: 20px;
+  background-color: rgb(171, 30, 30);
+  font-size: 100px;
+  width: fit-content;
+  border-radius: 30px;
+}
