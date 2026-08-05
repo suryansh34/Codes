@@ -1,0 +1,14 @@
+For Detailed Overview for Note Making , go to reactrouter documentation
+
+Browser-Router 
+
+google.com = /
+google.com/home =/home
+
+
+HashRouter 
+
+MemoryRouter
+
+StaticRouter -> Next.js uses it
+
