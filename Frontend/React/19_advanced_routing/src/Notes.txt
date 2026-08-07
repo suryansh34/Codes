@@ -1,0 +1,5 @@
+learn Use of Outlet
+
+The code in courses/coursedetail --> coursedetail/anything ---> gives a dark page , make it 404 not found 
+
+text-transform: captialize

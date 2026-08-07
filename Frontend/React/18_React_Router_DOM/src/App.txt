@@ -12,3 +12,19 @@ MemoryRouter
 
 StaticRouter -> Next.js uses it
 
+
+Single Page Application (SPA) --> like youtube
+
+i have to study:
+
+react router dom in advance
+
+basic setup
+
+nested routes
+
+dynamic routes
+
+usenavigate
+
+404 page
