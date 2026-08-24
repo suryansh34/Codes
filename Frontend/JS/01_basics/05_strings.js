@@ -39,3 +39,12 @@ console.log(url.includes('google'))
 console.log(name.split('-'));
 
 
+const name = new String("    Suryansh     ")
+
+console.log(name.slice(-7,-4));
+console.log(name.trim());
+
+
+
+const num = 3257014;
+console.log(num.toLocaleString('en-IN'));

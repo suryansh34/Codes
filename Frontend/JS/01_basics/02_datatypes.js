@@ -21,6 +21,9 @@ const accoountID = 35205
 
 let temp = null; // null 
 
+// console.log(temp);
+
+
 let temp2; // undefined
 
 console.table([temp, temp2]);

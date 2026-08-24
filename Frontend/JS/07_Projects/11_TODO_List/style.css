@@ -1,0 +1,39 @@
+html,body{
+    background: linear-gradient(deg135, blue, green);
+}
+.card{
+    width: 70%;
+    height: 250px;
+    background-color: rgb(130, 120, 120);
+    border-radius: 10px;
+    padding-left: 10px;
+}
+.main{
+    color: white;
+    font-family:cursive;
+
+}
+.searchBar{
+    margin-left: 47px;
+    border: 0;
+    outline: 0;
+}
+.input{
+    border-radius: 30px;
+    border: 0;
+    padding: 10px;    
+}
+.button{
+    border-radius: 30px;
+    border: 0;
+    width: 50px;
+    padding: 6px;
+    background-color: orange;
+}
+.card h1 img{
+    width: 40px;
+    margin-left: 10px;
+    
+}
+
+
