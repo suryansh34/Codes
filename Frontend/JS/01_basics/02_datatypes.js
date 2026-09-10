@@ -17,6 +17,14 @@
 
 */ 
 
+// Symbol example:
+
+const id1 = Symbol('id');
+const id2 = Symbol('id');
+console.log(id1===id2);
+
+
+
 const accoountID = 35205
 
 let temp = null; // null 
@@ -43,11 +51,16 @@ function Items(dry,wet){
 
 }
 
+const dryFruits = new Items("Kaju","Katli")
+const Vegetables = new Items("Dhaniya","Gajar")
+
+console.log(dryFruits);
+console.log(Vegetables);
 // an object i will make 
 
 // create a object and takes value --> eassier than below steps 
 
-const me = new Items("Kaju","Chasni");
+// var me = new Items("Kaju","Chasni");
 
 // console.log(me)
 
@@ -61,7 +74,7 @@ console.table(me)
 
 
 
-// !!!!!!!!!!! This is not the correct method !!!!!!!!!!!!!
+// ! This is not the correct method
 const e = emptyObj = {}
 e.dry = "kaju"
 e.wet = "katli"

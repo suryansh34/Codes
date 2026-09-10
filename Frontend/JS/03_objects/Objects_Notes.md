@@ -107,7 +107,7 @@ const regularUser = {
   email: "some@gmail.com",
   fullname: {
     firstname: "ram",
-    lastname: "shyam"
+    lastname: "surname"
   }
 };
 

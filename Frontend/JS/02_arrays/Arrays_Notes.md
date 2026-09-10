@@ -165,6 +165,30 @@ Use spread syntax to copy arrays safely:
 ```js
 const arr3 = [...arr1];
 ```
+### Deep and Shallow Copy Example
+# Shallow Copy 
+#### A shallow copy creates a new object, but nested objects are not copied. Instead, their references are copied.
+```js
+
+const person = {
+  name: "Alice",
+  address: {
+    city: "New York"
+  }
+};
+
+const copy = { ...person }; // Shallow copy
+
+copy.name = "Bob";
+copy.address.city = "Los Angeles";
+
+console.log(person.name);         // Alice
+console.log(person.address.city); // Los Angeles ❌ Changed
+
+*****************************
+
+
+```
 
 ---
 

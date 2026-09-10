@@ -1,0 +1,15 @@
+section {
+    display: flex;
+    justify-content: space-between;
+}
+section .left-side{
+    width: 50%;
+}
+section .right-side{
+    width: 50%;
+    height: 100px;
+}
+section .left-side .box1{
+    margin-top: 300px;
+    margin-left: 100px;
+}

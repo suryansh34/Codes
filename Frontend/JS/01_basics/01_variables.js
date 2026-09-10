@@ -1,8 +1,11 @@
 const accountID = 13554523
 let accountEmail = "surya@google.com"
 var accountPassword = "1234" /* Prefer not to use var because it can create issue of block scope  */
-accountCity = "Raipur"
 let accountState;
+
+accountCity = "Raipur"
+console.log(accountCity)
+
 
 // accountID = 3489057   /* not allowed*/
 

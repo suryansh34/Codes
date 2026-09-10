@@ -1,6 +1,9 @@
-// hoisting --> Hoisting in JavaScript means that declarations are conceptually moved to the top of their scope before code execution.
-console.log(addTwo(2))
+const userbase = [{
+    name:"ram", age:45
+},{
+    name:"ramuuu", age:23
+}]
 
-const addTwo  = function(num){
-    return num + 2
-}
+const [{name: nam,age: umar}] = userbase;
+
+console.log(nam,umar);

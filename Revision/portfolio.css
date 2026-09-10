@@ -1,0 +1,15 @@
+.details{
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+    gap: 20px;
+    
+}
+.main{
+    display:flex;
+    justify-content: center;
+}
+section {
+    display: flex;
+    justify-content: space-around;
+}

@@ -1,4 +1,3 @@
-(function chai(){
-    console.log("Hemlo Ji");
-
-})()
+var two;
+console.log(two);
+two = 2;
