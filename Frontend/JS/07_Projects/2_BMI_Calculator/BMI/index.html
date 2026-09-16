@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart BMI Calculator</title>
+  
+  <!-- Font Awesome Icons for Secure, Fast, Accurate -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+  />
+
+  <style>
+    /* ------------------------------------
+       Global Reset & Background Gradient
+    ------------------------------------ */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #ff6a00 0%, #ee0979 25%, #1f1c2c 150%);
+      background-color: #121212;
+      padding: 20px;
+    }
+
+    /* ------------------------------------
+       Card Container
+    ------------------------------------ */
+    .card {
+      background: #ffffff;
+      width: 100%;
+      max-width: 380px;
+      border-radius: 20px;
+      padding: 32px 28px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Title Styling */
+    .card-title {
+      font-size: 1.25rem;
+      color: #777;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .card-title strong {
+      color: #222;
+      font-weight: 700;
+    }
+
+    .card-title .emoji {
+      font-size: 1.3rem;
+      vertical-align: middle;
+      margin-left: 2px;
+    }
+
+    /* ------------------------------------
+       Input Rows
+    ------------------------------------ */
+    .input-group {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .input-group label {
+      font-size: 0.95rem;
+      color: #444;
+      font-weight: 500;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: #f4f5f7;
+      border: 1px solid #e2e4e8;
+      border-radius: 8px;
+      padding: 6px 12px;
+      width: 130px;
+    }
+
+    .input-wrapper input {
+      width: 100%;
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #222;
+      text-align: right;
+      padding-right: 6px;
+    }
+
+    /* Hide arrow spinners for chrome, safari, edge, firefox */
+    .input-wrapper input::-webkit-outer-spin-button,
+    .input-wrapper input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    .input-wrapper input[type=number] {
+      -moz-appearance: textfield;
+    }
+
+    .input-wrapper .unit {
+      font-size: 0.9rem;
+      color: #777;
+      font-weight: 400;
+    }
+
+    /* ------------------------------------
+       BMI Result Box
+    ------------------------------------ */
+    .result-box {
+      width: 100%;
+      background: #f4f5f7;
+      border-radius: 8px;
+      padding: 14px 0;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #444;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .result-box span.bmi-score {
+      font-weight: 700;
+      color: #222;
+    }
+
+    .result-box span.bmi-status {
+      font-weight: 600;
+      color: #2e7d32; /* Green status color */
+      margin-left: 4px;
+    }
+
+    /* ------------------------------------
+       Features Section (Icons)
+    ------------------------------------ */
+    .features-grid {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 15px 0 25px 0;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+      position: relative;
+    }
+
+    /* Vertical line dividers between features */
+    .feature-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 10%;
+      height: 80%;
+      width: 1px;
+      background-color: #eee;
+    }
+
+    .feature-item i {
+      font-size: 1.3rem;
+      color: #333;
+    }
+
+    .feature-item span {
+      font-size: 0.8rem;
+      color: #555;
+      font-weight: 500;
+    }
+
+    /* ------------------------------------
+       Button & Footer Link
+    ------------------------------------ */
+    .btn-submit {
+      width: 100%;
+      background: linear-gradient(135deg, #ff9400 0%, #ff3b00 100%);
+      color: #ffffff;
+      border: none;
+      border-radius: 12px;
+      padding: 16px 0;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(255, 60, 0, 0.35);
+      transition: transform 0.1s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-submit:hover {
+      box-shadow: 0 12px 24px rgba(255, 60, 0, 0.45);
+    }
+
+    .btn-submit:active {
+      transform: scale(0.98);
+    }
+
+    .footer-link {
+      margin-top: 25px;
+      padding-top: 15px;
+      border-top: 1px solid #f0f0f0;
+      width: 100%;
+      text-align: center;
+    }
+
+    .footer-link a {
+      color: #888;
+      font-size: 0.85rem;
+      text-decoration: none;
+      font-weight: 400;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <!-- Header -->
+    <div class="card-title">
+      <strong>Smart BMI</strong> Calculator <span class="emoji">🧠</span>
+    </div>
+
+    <!-- Height Input -->
+    <div class="input-group">
+      <label for="height">Height</label>
+      <div class="input-wrapper">
+        <input type="number" id="height" value="170" placeholder="0" />
+        <span class="unit">cm</span>
+      </div>
+    </div>
+
+    <!-- Weight Input -->
+    <div class="input-group">
+      <label for="weight">Weight</label>
+      <div class="input-wrapper">
+        <input type="number" id="weight" value="65" placeholder="0" />
+        <span class="unit">kg</span>
+      </div>
+    </div>
+
+    <!-- Result Display -->
+    <div class="result-box">
+      Your BMI: <span class="bmi-score" id="bmi-val">22.5</span> 
+      <span class="bmi-status" id="bmi-status">Normal</span>
+    </div>
+
+    <!-- Feature Icons -->
+    <div class="features-grid">
+      <div class="feature-item">
+        <i class="fa-regular fa-shield-check"></i>
+        <!-- Alternative fallback icon if icon font version differs -->
+        <i class="fa-solid fa-shield-halved" style="display: none;"></i> 
+        <span>Secure</span>
+      </div>
+      <div class="feature-item">
+        <i class="fa-solid fa-bolt"></i>
+        <span>Fast</span>
+      </div>
+      <div class="feature-item">
+        <i class="fa-solid fa-bullseye"></i>
+        <span>Accurate</span>
+      </div>
+    </div>
+
+    <!-- Action Button -->
+    <button class="btn-submit" id="calc-btn">TRY NOW</button>
+
+    <!-- Footer URL -->
+    <div class="footer-link">
+      <a href="#">QuickToolsUltra.com</a>
+    </div>
+  </div>
+
+  <!-- JavaScript Functionality -->
+  <script>
+    const heightInput = document.getElementById('height');
+    const weightInput = document.getElementById('weight');
+    const bmiVal = document.getElementById('bmi-val');
+    const bmiStatus = document.getElementById('bmi-status');
+    const calcBtn = document.getElementById('calc-btn');
+
+    function calculateBMI() {
+      const height = parseFloat(heightInput.value);
+      const weight = parseFloat(weightInput.value);
+
+      if (!height || !weight || height <= 0 || weight <= 0) {
+        bmiVal.textContent = "--";
+        bmiStatus.textContent = "Invalid Input";
+        bmiStatus.style.color = "#d32f2f";
+        return;
+      }
+
+      // Formula: Weight (kg) / (Height (m))^2
+      const heightInMeters = height / 100;
+      const bmi = (weight / (heightInMeters * heightInMeters)).toFixed(1);
+
+      bmiVal.textContent = bmi;
+
+      // Determine BMI Status & Color
+      if (bmi < 18.5) {
+        bmiStatus.textContent = "Underweight";
+        bmiStatus.style.color = "#1976d2"; // Blue
+      } else if (bmi >= 18.5 && bmi <= 24.9) {
+        bmiStatus.textContent = "Normal";
+        bmiStatus.style.color = "#2e7d32"; // Green
+      } else if (bmi >= 25 && bmi <= 29.9) {
+        bmiStatus.textContent = "Overweight";
+        bmiStatus.style.color = "#ed6c02"; // Orange
+      } else {
+        bmiStatus.textContent = "Obese";
+        bmiStatus.style.color = "#d32f2f"; // Red
+      }
+    }
+
+    // Auto calculate on input typing or button click
+    heightInput.addEventListener('input', calculateBMI);
+    weightInput.addEventListener('input', calculateBMI);
+    calcBtn.addEventListener('click', calculateBMI);
+  </script>
+</body>
+</html>

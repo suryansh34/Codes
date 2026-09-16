@@ -40,3 +40,14 @@ span {
 #green {
     background: green;
 }
+.nav{
+  display: flex;
+  justify-content: space-evenly;
+}
+.one, .two{
+  font-size: xx-large;
+  font-family:cursive;
+  display: inline-block;
+  background-color: #eeee;
+  font-weight: bolder;
+}

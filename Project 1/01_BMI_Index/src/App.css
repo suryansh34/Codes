@@ -1,0 +1,78 @@
+.container {
+  width: 575px;
+  height: 825px;
+  background-color: #797978;
+  padding-left: 30px;
+}
+
+/* Shared row styling for flex alignment */
+.heightincm,
+.weight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 350px;
+  margin-top: 20px;
+}
+
+/* Remove default margins from heading and paragraph elements inside rows */
+.heightincm h5,
+.weight label {
+  margin: 0;
+  font-weight: bold;
+}
+
+#height,
+#weight {
+  width: 150px;
+  height: 25px;
+  /* margin-top removed so flexbox aligns items horizontally */
+}
+
+#weight-guide {
+  margin-left: 75px;
+  margin-top: 25px;
+}
+
+#results {
+  font-size: 35px;
+  margin-left: 90px;
+  margin-top: 20px;
+  color: rgb(241, 241, 241);
+}
+
+button {
+  width: 150px;
+  height: 35px;
+  margin-left: 90px;
+  margin-top: 25px;
+  background-color: #fff;
+  padding: 1px 30px;
+  border-radius: 8px;
+  color: #212121;
+  text-decoration: none;
+  border: 2px solid #212121;
+  font-size: 25px;
+}
+
+h1 {
+  padding-left: 15px;
+  padding-top: 25px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home,
+.yt {
+  font-family: cursive;
+  font-size: xx-large;
+  font-weight: bolder;
+  background-color: #eeee;
+}
+
+body{
+background: linear-gradient(to bottom, #c65d00, #000000);
+}

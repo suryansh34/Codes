@@ -17,6 +17,7 @@ form.addEventListener('submit',function(e){
     if(height == '' || height < 0 || isNaN(height)){
 
         result.innerHTML = `Please give a valid height ${height}`;
+
     }
 
     //Checking Weight input type:
@@ -29,8 +30,9 @@ form.addEventListener('submit',function(e){
     else {
         const bmi = (weight / ((height*height)/10000)).toFixed(2)
         // show the result
-        results.innerHTML = `<span>${bmi}</span>`
-    }
-    
-    
+        results.innerHTML = 
+        `<span>Your BMI 
+        <br>
+        ${bmi}</span>`
+    }    
 })
