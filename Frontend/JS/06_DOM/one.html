@@ -50,6 +50,42 @@ document.querySelectorAll('*').forEach(function (el) => {
 })
 
 
+<!-- innerText V/S textContent V/S innerHTML -->
 
+<!-- HTML Collection and NOdeLIst is not properly Array -->
+
+
+<!-- 
+const tempLilist = document.querySelectorAll('li')
+undefined
+tempLilist
+NodeList(3) [li.list_item, li.list_item, li.list_item]
+tempLilist.forEach((num)=>{
+    num.style.color = "green"
+})
+undefined
+document.getElementsByClassName('list-item')
+HTMLCollection []length: 0[[Prototype]]: HTMLCollectionitem: ƒ item()length: (...)namedItem: ƒ namedItem()constructor: ƒ HTMLCollection()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "HTMLCollection"get length: ƒ length()[[Prototype]]: Object
+document.getElementsByClassName('list_item')
+HTMLCollection(3) [li.list_item, li.list_item, li.list_item]0: li.list_item1: li.list_item2: li.list_itemlength: 3[[Prototype]]: HTMLCollectionitem: ƒ item()length: (...)namedItem: ƒ namedItem()constructor: ƒ HTMLCollection()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "HTMLCollection"get length: ƒ length()[[Prototype]]: Object
+const tempClassList = document.getElementsByClassName('list_item')
+undefined
+tempClassList.forEach((li)=>{
+    console.log(li);
+})
+VM2629:1 Uncaught TypeError: tempClassList.forEach is not a function
+    at <anonymous>:1:15
+(anonymous) @ VM2629:1
+Array.from(tempClassList)
+(3) [li.list_item, li.list_item, li.list_item]
+const toArray = Array.from(tempClassList)
+undefined
+toArray.forEach((li)=>{
+    console.log(li)
+})
+VM2884:2 <li class=​"list_item" style=​"color:​ green;​">​…​</li>​
+VM2884:2 <li class=​"list_item" style=​"color:​ green;​">​…​</li>​
+VM2884:2 <li class=​"list_item" style=​"color:​ green;​">​…​</li>​
+undefined
 
 -->
