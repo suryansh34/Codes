@@ -1,22 +1,14 @@
 #include<iostream>
 
 int main() {
-    int array[5] = {3,7,8,2,5};
+    int arr[] = {3,7,2,8,5};
+    int size = sizeof(arr)/sizeof(arr[0]);
+    int mx = arr[0];
 
-    // finds maximum:
-    int size = 5;
-    int store = 0;
-
-    for(int i=0; i < size; i++){
-        for(int j = i + 1; j < size; j++){
-            if(i>j){
-                store = store + i;
-            } 
-            break;
+    for(int j=1;j<size;j++){
+        if(arr[j]>arr[0]){
+            
         }
     }
-
-    std::cout<< i;
-
     return 0;
-}
+}0
