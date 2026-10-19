@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Screen Fluid Dashboard</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-mono-clock { font-family: 'JetBrains Mono', monospace; }
+
+        /* Dynamic background transition */
+        #theme-bg {
+            transition: background 2s ease-in-out;
+        }
+
+        /* Ambient spinning mesh */
+        @keyframes spinGlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+            animation: spinGlow 30s linear infinite;
+        }
+    </style>
+</head>
+<body id="theme-bg" class="bg-zinc-950 text-white min-h-screen w-screen flex flex-col justify-between p-6 sm:p-10 md:p-14 overflow-hidden relative selection:bg-cyan-500 selection:text-black">
+
+    <!-- Dynamic Screen-Filling Background Orbs -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="animate-spin-slow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vh] opacity-35">
+            <div id="orb-1" class="absolute top-0 left-0 w-[45vw] h-[45vw] max-w-[600px] max-h-[600px] rounded-full blur-[100px] transition-colors duration-1000"></div>
+            <div id="orb-2" class="absolute bottom-0 right-0 w-[45vw] h-[45vw] max-w-[600px] max-h-[600px] rounded-full blur-[100px] transition-colors duration-1000"></div>
+            <div id="orb-3" class="absolute top-1/3 right-1/4 w-[35vw] h-[35vw] max-w-[500px] max-h-[500px] rounded-full blur-[100px] transition-colors duration-1000"></div>
+        </div>
+    </div>
+
+    <!-- TOP BAR: Brand & System Stats (Full Width) -->
+    <header class="relative z-10 w-full flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-zinc-800/80 pb-6 backdrop-blur-md">
+        <div class="flex items-center gap-3">
+            <span class="relative flex h-3 w-3">
+                <span id="status-pulse" class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"></span>
+                <span id="status-dot" class="relative inline-flex rounded-full h-3 w-3"></span>
+            </span>
+            <div>
+                <h1 class="text-sm font-bold uppercase tracking-widest text-zinc-300" id="theme-label">Fluid Cockpit</h1>
+                <p class="text-xs text-zinc-500 font-medium">Real-Time Telemetry & Clock</p>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <div class="hidden sm:flex flex-col items-end text-xs text-zinc-400 font-mono">
+                <span>FPS: <span id="fps-counter" class="text-white font-semibold">60</span></span>
+                <span>STATE: <span class="text-emerald-400 font-semibold">SYNCED</span></span>
+            </div>
+            <button id="format-toggle" class="bg-zinc-900/80 hover:bg-zinc-800 border border-zinc-700/60 text-zinc-300 hover:text-white px-4 py-2 rounded-xl transition-all duration-200 active:scale-95 text-xs font-semibold shadow-md backdrop-blur-md">
+                12H / 24H
+            </button>
+        </div>
+    </header>
+
+    <!-- CENTER AREA: Massive Edge-to-Edge Fluid Time Display -->
+    <main class="relative z-10 w-full flex flex-col items-center justify-center my-auto py-8">
+        <div class="w-full flex flex-col items-center justify-center select-none">
+            
+            <!-- Main Time -->
+            <div class="flex items-baseline justify-center font-mono-clock w-full text-center">
+                <span id="time-main" class="text-[13vw] leading-none font-extrabold tracking-tighter bg-clip-text text-transparent transition-all duration-500">
+                    00:00:00
+                </span>
+                <span id="time-dot" class="text-[6vw] font-extrabold px-1 transition-colors duration-500">.</span>
+                <span id="time-ms" class="text-[5vw] font-bold min-w-[3ch] text-left transition-colors duration-500">
+                    000
+                </span>
+                <span id="ampm" class="text-[3vw] font-bold ml-2 self-start transition-colors duration-500">
+                </span>
+            </div>
+
+            <!-- Full Width Fluid Millisecond Gauge Bar -->
+            <div class="w-full max-w-7xl h-3 bg-zinc-900/90 rounded-full overflow-hidden p-0.5 border border-zinc-800/80 shadow-inner mt-6">
+                <div id="ms-bar" class="h-full rounded-full transition-all duration-75" style="width: 0%;"></div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- BOTTOM BAR: Grid Metadata Cards across Full Width -->
+    <footer class="relative z-10 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 border-t border-zinc-800/80 pt-6 backdrop-blur-md">
+        
+        <!-- Card 1: Day of Week -->
+        <div class="bg-zinc-900/40 border border-zinc-800/60 rounded-2xl p-4 flex flex-col justify-between">
+            <span class="text-xs uppercase tracking-wider text-zinc-500 font-semibold">Day</span>
+            <span id="day" class="text-2xl font-bold tracking-wide mt-1 transition-colors duration-500">Monday</span>
+        </div>
+
+        <!-- Card 2: Date -->
+        <div class="bg-zinc-900/40 border border-zinc-800/60 rounded-2xl p-4 flex flex-col justify-between">
+            <span class="text-xs uppercase tracking-wider text-zinc-500 font-semibold">Date</span>
+            <span id="date" class="text-xl sm:text-2xl font-bold text-zinc-200 mt-1">October 19, 2026</span>
+        </div>
+
+        <!-- Card 3: Year & Week -->
+        <div class="bg-zinc-900/40 border border-zinc-800/60 rounded-2xl p-4 flex flex-col justify-between">
+            <span class="text-xs uppercase tracking-wider text-zinc-500 font-semibold">Year Progress</span>
+            <div class="flex items-baseline justify-between mt-1">
+                <span id="year-num" class="text-xl sm:text-2xl font-bold text-zinc-200">2026</span>
+                <span id="day-of-year" class="text-xs font-mono text-zinc-400">Day 292 of 365</span>
+            </div>
+        </div>
+
+        <!-- Card 4: Precision Gauge Mode -->
+        <div class="bg-zinc-900/40 border border-zinc-800/60 rounded-2xl p-4 flex flex-col justify-between">
+            <span class="text-xs uppercase tracking-wider text-zinc-500 font-semibold">Render Engine</span>
+            <div class="flex items-center justify-between mt-1">
+                <span class="text-sm font-semibold text-zinc-300">rAF 60+ FPS</span>
+                <span id="theme-status-tag" class="text-xs px-2.5 py-1 rounded-lg font-mono font-semibold bg-zinc-800 text-zinc-300">ACTIVE</span>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

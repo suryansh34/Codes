@@ -1,0 +1,31 @@
+* {
+    background-color: rgb(51, 47, 47);
+    color: white;
+}
+
+#main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: space-around;
+    /* margin: 100px; */
+};
+
+.body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+};
+
+#upper{
+    /* background-color: sienna; */
+};
+
+#lower{
+    background-color: #fff;
+    padding-top: 200px;
+    margin-top: 500px;
+    display: flex;
+    flex-direction: column;
+};
