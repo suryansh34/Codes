@@ -16,18 +16,18 @@ int main() {
     int i = 1;
     while(i<=n){
         int j = 1;
-        int star = n - i + 1;
-        while(star){
+        int space = i - 1;
+        while(space){
+            cout<<"  ";
+            space--;
+        }
+        while(j<=n - i + 1){
             cout<<"* ";
-            star
+            j++;            
         }
-        while(j<=n){
-            
-        }
-    }
-    
-
-      
+        cout<<endl;
+        i++;
+    }    
     
     return 0;
 }

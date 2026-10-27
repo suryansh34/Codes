@@ -1,0 +1,1 @@
+// negative number ka binary print karo .
