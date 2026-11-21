@@ -1,0 +1,94 @@
+### ***Backend Notes:***
+
+### 
+
+
+We are doing mongoose for ODM
+
+
+
+famous tool is : MoonModler ( 
+
+
+
+for data modeling in free:
+
+eraser.io
+
+
+
+
+
+\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
+
+
+
+#### Data Modelling:
+
+
+
+
+
+For practical approach of data modelling 
+
+we can use codesanbox
+
+stackblitz
+
+
+
+we will be using stackblitz
+
+we have created a models folder
+
+under it we have Todos, under this we have todo.models.js
+
+
+
+first know how mongoose made its model 
+
+1\. import the mongoose
+
+2\. built a schema ( using new schema)
+
+3\. export a const and user
+
+
+
+Note: the model of the mongoose get converted into smallcase and 's' / means plural in the databases.
+
+
+
+we can make different field under the objects of schema ( mongoose documentation):
+
+can be written as => username: String;
+
+but we can write in this way -> username : {
+
+&#x20;     type:String,
+
+&#x20;     required: true,
+
+&#x20;     unique:true,
+
+&#x20;     lowercase:true
+
+&#x20;   },
+
+
+
+study more in documentation mongoose validation custom error messages
+
+
+
+
+
+Timestamp:
+
+
+
+we have createdAt, updatedAt
+
+
+while writing a schema { we have different users on our site , so we make who created this schema , so we use createdBy ( Under this we have special type( mongoose.schema.Types.ObjectId) and refernce ( under this we give the same name that of the model name )
+
