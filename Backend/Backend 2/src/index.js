@@ -9,6 +9,20 @@ dotenv.config({
 
 
 connectDB()
+.then(()=>{
+    // we have used this to prevent any issue for production 
+    app.on("error",(err)=>{
+        console.log("ERROR: ",err);
+        throw err
+    })
+    app.listen(process.env.PORT || 8000, () => {
+        console.log(`⚙️ Server is running on port ${process.env.PORT}`)
+    })
+})
+.catch((err)=>{
+    console.log("MongoDB connection field !!!  ",err);
+    
+})
 
 
 
