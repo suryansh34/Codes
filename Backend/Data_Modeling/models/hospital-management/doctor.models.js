@@ -6,7 +6,7 @@ const doctorSchema = new mongoose.Schema({
     reuired:true
   },
   salary: {
-    type: String,
+    type: String, //can be in $200 not 200 ( so used String)
     required:true,
   },
   qualification:{

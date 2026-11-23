@@ -16,7 +16,7 @@ const orderSchema = new mongoose.Scehma(
       required: true,
     },
     customer: {
-      type: mongoose.Scehma.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
     },
     orderItems: {
@@ -27,7 +27,7 @@ const orderSchema = new mongoose.Scehma(
     },
     status: {
       type: String,
-      enum: ['PENDING', 'CANCELLED', 'DELIVERD'],
+      enum: ['PENDING', 'CANCELLED', 'DELIVERED'],
       default: 'PENDING',
     },
   },

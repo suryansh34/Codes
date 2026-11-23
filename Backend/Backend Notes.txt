@@ -57,3 +57,17 @@ In MonogDB product Image is stored in buffer in databases but not convenient , s
 
 
 Every Schema have their own Id ( using underscores , we will be going to study in the monogDB)
+
+
+
+
+***********************************************
+
+we are making a production based projects ( backend of youtube)
+so we are going to make it 
+
+we need 
+we have src , public
+under the src we have controllers db middlewares modles routes utils
+
+prettier helps multiple 
