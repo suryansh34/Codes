@@ -1,3 +1,4 @@
+*.py linguist-vendored
 Matplotlib/** linguist-vendored
 CP_Geeks/** linguist-vendored
-*.py linguist-vendored
+Mine Major Project/** linguist-vendored
