@@ -1,4 +1,4 @@
-class APiError  extends Error {
+class ApiError  extends Error {
     constructor(
         statusCode,
         message = "Something went wrong",
@@ -8,7 +8,7 @@ class APiError  extends Error {
         super(message)
         this.statusCode = statusCode
         this.data = null
-        this.message = message
+        this.message = message // it is redundant because 'super(message)' already done it.
         this.success = false;
         this.errors = errors
 
